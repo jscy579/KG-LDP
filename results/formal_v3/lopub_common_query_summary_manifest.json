@@ -1,0 +1,35 @@
+{
+  "generated_at_utc": "2026-07-23T06:34:28.808664+00:00",
+  "script": "experiments\\summarize_lopub_joint_distribution.py",
+  "comparison_target": "identical four ontology-group, three-state query distributions",
+  "comparison_contract": "same Smp-selected group, one report per user, same complete user-level epsilon",
+  "lopub_scope": "LoPub-derived group-local Bloom-RR plus EM joint estimation; not the complete LoPub pipeline",
+  "inputs": [
+    {
+      "path": "results\\formal_v3\\PIC\\lopub_joint_distribution\\summary_bootstrap_ci.csv",
+      "sha256": "eb7a4de3a245a2ed5024fed5da80454972b5017049cdca1b4dfa0ff4610115ed"
+    },
+    {
+      "path": "results\\formal_v3\\PIC\\lopub_joint_distribution\\run_diagnostics.csv",
+      "sha256": "da53ae2feae1541eab5fcf2b4d83b24e47777f9357063504675e9cf91c4e66f9"
+    },
+    {
+      "path": "results\\formal_v3\\NHANES_2021_2023\\lopub_joint_distribution\\summary_bootstrap_ci.csv",
+      "sha256": "06238495e0955b2f4501dad380090f0f50d7a3315662bf8de46fd21de3bfef33"
+    },
+    {
+      "path": "results\\formal_v3\\NHANES_2021_2023\\lopub_joint_distribution\\run_diagnostics.csv",
+      "sha256": "62e787070ffe75b617c0c74a13891d70c1aa99b9d1e1911ca497ac4594765fd7"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "results\\formal_v3\\lopub_common_query_summary.csv",
+      "sha256": "bc3c214ca20d565e148477045f06e7cf622c6862775d556b42078c45601f84c1"
+    },
+    {
+      "path": "results\\formal_v3\\lopub_vs_semmed_mse_ratio.csv",
+      "sha256": "cbd88c7f0707d9a97c7ad6679261062997b62260427838d959b2a780873820ed"
+    }
+  ]
+}

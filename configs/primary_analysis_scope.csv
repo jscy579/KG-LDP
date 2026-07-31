@@ -1,0 +1,25 @@
+dataset_id,attribute_name,primary_analysis_status,primary_exclusion_reason,supplementary_sensitivity_set,decision_date,decision_authority
+PIC,sodium,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+NHANES_2021_2023,sodium,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+PIC,potassium,excluded,PIC specimen is recorded as Other Body Fluid; whole-blood mapping and serum interval are not sufficiently aligned,add_back_potassium,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+NHANES_2021_2023,potassium,excluded,paired exclusion preserves the same primary attribute set across PIC and NHANES,add_back_potassium,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+PIC,chloride,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+NHANES_2021_2023,chloride,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+PIC,creatinine,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+NHANES_2021_2023,creatinine,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+PIC,urea_nitrogen,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+NHANES_2021_2023,urea_nitrogen,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+PIC,glucose,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+NHANES_2021_2023,glucose,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+PIC,albumin,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+NHANES_2021_2023,albumin,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+PIC,ionized_calcium,excluded,PIC English/Chinese labels conflict and the available public interval is serum pH-adjusted rather than whole blood,add_back_calcium,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+NHANES_2021_2023,total_calcium,excluded,paired exclusion preserves the same primary attribute set across PIC and NHANES,add_back_calcium,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+PIC,magnesium,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+NHANES_2021_2023,magnesium,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+PIC,phosphate,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+NHANES_2021_2023,phosphate,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+PIC,hemoglobin,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+NHANES_2021_2023,hemoglobin,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+PIC,platelet_count,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task
+NHANES_2021_2023,platelet_count,included,,,2026-07-20,user-approved Scheme A in the SemMed-LDP project task

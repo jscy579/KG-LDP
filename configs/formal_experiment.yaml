@@ -1,0 +1,50 @@
+project_id: SemMed-LDP
+schema_version: formal-v3
+datasets: [PIC, NHANES_2021_2023]
+knowledge:
+  loinc_version: "2.82"
+  hpo_version: "2026-02-16"
+  loinc_root: data/knowledge/loinc/2.82
+  hpo_path: data/knowledge/hpo/hp.obo
+  mapping_path: configs/formal_attribute_mapping.csv
+  edge_path: configs/formal_graph_edges.csv
+  resource_manifest: data/knowledge/resource_manifest.json
+primary_scope:
+  scope_path: configs/primary_analysis_scope.csv
+  attributes_per_dataset: 10
+  paired_exclusions: [potassium, calcium]
+  supplementary_sets: [add_back_potassium, add_back_calcium, add_back_both]
+privacy:
+  mechanisms: [GRR, OUE]
+  strategies: [Smp, Spl, RS+FD]
+  epsilon_list: [0.1, 0.25, 0.5, 1.0, 2.0, 4.0, 8.0]
+  repeat_runs: 30
+  domain_size: 3
+  reporting_protocol: multidimensional_user_level_ldp
+experiments:
+  seed: 2026
+  confidence_level: 0.95
+  protocol_comparison:
+    sample_sizes: [500, 1000, 2500, 5000, all]
+    repeat_runs: 30
+    representation: SemMed-4D
+  representation_comparison:
+    sample_sizes: [all]
+    repeat_runs: 30
+    n_random_partitions: 100
+    strategy: Smp
+  resolution_tradeoff:
+    sample_sizes: [500, 1000, 2500, 5000, all]
+    repeat_runs: 30
+    strategy: Smp
+  lopub_joint_distribution:
+    repeat_runs: 30
+    strategy: Smp
+    bloom_bits: 64
+    hash_functions: 5
+    convergence_gap: 0.001
+    min_iterations: 25
+    max_iterations: 500
+outputs:
+  root: results/formal_v3
+  manifest: results/formal_v3/manifest.json

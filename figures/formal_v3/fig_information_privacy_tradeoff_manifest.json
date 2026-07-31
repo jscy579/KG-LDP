@@ -1,0 +1,42 @@
+{
+  "generated_at_utc": "2026-07-31T06:06:21.280691+00:00",
+  "script": "experiments\\plot_information_privacy_tradeoff.py",
+  "epsilon": 1.0,
+  "seed": 2026,
+  "random_partitions": 100,
+  "retention_definition": "equal-weight mean of I(X_a;Z)/H(X_a) over nonconstant raw attributes",
+  "inputs": [
+    {
+      "path": "configs\\formal_attribute_mapping.csv",
+      "sha256": "fba4e54c9a23767cbf688ca557dbae3e22096e8ecff1794dbf93a277ba1a5318"
+    },
+    {
+      "path": "configs\\reference_intervals.csv",
+      "sha256": "b14b1bfc4b5fe9d002e411a5b2c14ad324701a54ecc47b179a2853b3ab6a07cb"
+    },
+    {
+      "path": "experiments\\plot_information_privacy_tradeoff.py",
+      "sha256": "89080e42657d894538a2f1e920a7b44d93edd8b3b80a1fa6726a1861e5be14b9"
+    },
+    {
+      "path": "configs\\formal_experiment.yaml",
+      "sha256": "8ed34c3240bc665978df226a59159e68a6ecdd8f9d5b1c1da9a14ab0b8dda0d5"
+    },
+    {
+      "path": "data\\processed\\working\\pic_feature_matrix.csv",
+      "sha256": "2630b8c9b00ca1809fbf34e885b083f8d6c42dcde900d9502cfee5fc770b28d9"
+    },
+    {
+      "path": "data\\processed\\working\\nhanes_feature_matrix.csv",
+      "sha256": "d2cb6e9b623b408f31f4a0befe4cfc0d8b373f9b2bb2e73dcbe1684ee42e5ddd"
+    },
+    {
+      "path": "data\\processed\\working\\pic_metadata.csv",
+      "sha256": "a32abcab878588f7ddf2f74b069f872acd39400a360a4741badb714de71d9854"
+    },
+    {
+      "path": "data\\processed\\working\\nhanes_metadata.csv",
+      "sha256": "91f2d2582ee9505c0569aac1d528a113067a5b402c36b7b061c5ce5d47753635"
+    }
+  ]
+}

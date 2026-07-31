@@ -1,0 +1,136 @@
+{
+  "project_id": "SemMed-LDP",
+  "generated_at_utc": "2026-07-22T12:13:20.378431+00:00",
+  "python_version": "3.13.5",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "git_commit": "unavailable",
+  "config": {
+    "project_id": "SemMed-LDP",
+    "schema_version": "formal-v3",
+    "datasets": [
+      "PIC",
+      "NHANES_2021_2023"
+    ],
+    "knowledge": {
+      "loinc_version": "2.82",
+      "hpo_version": "2026-02-16",
+      "loinc_root": "data/knowledge/loinc/2.82",
+      "hpo_path": "data/knowledge/hpo/hp.obo",
+      "mapping_path": "configs/formal_attribute_mapping.csv",
+      "edge_path": "configs/formal_graph_edges.csv",
+      "resource_manifest": "data/knowledge/resource_manifest.json"
+    },
+    "primary_scope": {
+      "scope_path": "configs/primary_analysis_scope.csv",
+      "attributes_per_dataset": 10,
+      "paired_exclusions": [
+        "potassium",
+        "calcium"
+      ],
+      "supplementary_sets": [
+        "add_back_potassium",
+        "add_back_calcium",
+        "add_back_both"
+      ]
+    },
+    "privacy": {
+      "mechanisms": [
+        "GRR",
+        "OUE"
+      ],
+      "strategies": [
+        "Smp",
+        "Spl",
+        "RS+FD"
+      ],
+      "epsilon_list": [
+        0.1,
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0,
+        8.0
+      ],
+      "repeat_runs": 30,
+      "domain_size": 3,
+      "reporting_protocol": "multidimensional_user_level_ldp"
+    },
+    "experiments": {
+      "seed": 2026,
+      "confidence_level": 0.95,
+      "protocol_comparison": {
+        "sample_sizes": [
+          500,
+          1000,
+          2500,
+          5000,
+          "all"
+        ],
+        "repeat_runs": 30,
+        "representation": "SemMed-4D"
+      },
+      "representation_comparison": {
+        "sample_sizes": [
+          "all"
+        ],
+        "repeat_runs": 30,
+        "n_random_partitions": 100,
+        "strategy": "Smp"
+      },
+      "resolution_tradeoff": {
+        "sample_sizes": [
+          500,
+          1000,
+          2500,
+          5000,
+          "all"
+        ],
+        "repeat_runs": 30,
+        "strategy": "Smp"
+      }
+    },
+    "outputs": {
+      "root": "results/formal_v3",
+      "manifest": "results/formal_v3/manifest.json"
+    }
+  },
+  "inputs": [
+    {
+      "path": "C:\\Users\\hechuan\\Documents\\知识图谱+本地差分隐私\\SemMed-LDP\\data\\processed\\working\\nhanes_feature_matrix.csv",
+      "sha256": "d2cb6e9b623b408f31f4a0befe4cfc0d8b373f9b2bb2e73dcbe1684ee42e5ddd"
+    },
+    {
+      "path": "C:\\Users\\hechuan\\Documents\\知识图谱+本地差分隐私\\SemMed-LDP\\data\\processed\\working\\pic_feature_matrix.csv",
+      "sha256": "2630b8c9b00ca1809fbf34e885b083f8d6c42dcde900d9502cfee5fc770b28d9"
+    },
+    {
+      "path": "C:\\Users\\hechuan\\Documents\\知识图谱+本地差分隐私\\SemMed-LDP\\configs\\formal_attribute_mapping.csv",
+      "sha256": "fba4e54c9a23767cbf688ca557dbae3e22096e8ecff1794dbf93a277ba1a5318"
+    },
+    {
+      "path": "C:\\Users\\hechuan\\Documents\\知识图谱+本地差分隐私\\SemMed-LDP\\configs\\reference_intervals.csv",
+      "sha256": "b14b1bfc4b5fe9d002e411a5b2c14ad324701a54ecc47b179a2853b3ab6a07cb"
+    },
+    {
+      "path": "C:\\Users\\hechuan\\Documents\\知识图谱+本地差分隐私\\SemMed-LDP\\configs\\formal_experiment.yaml",
+      "sha256": "729089ae04d0d51a8a58e2fb1a883fb3197fa67757b9249275d4cce441f8d324"
+    },
+    {
+      "path": "C:\\Users\\hechuan\\Documents\\知识图谱+本地差分隐私\\SemMed-LDP\\data\\processed\\working\\nhanes_metadata.csv",
+      "sha256": "91f2d2582ee9505c0569aac1d528a113067a5b402c36b7b061c5ce5d47753635"
+    },
+    {
+      "path": "C:\\Users\\hechuan\\Documents\\知识图谱+本地差分隐私\\SemMed-LDP\\data\\processed\\working\\pic_metadata.csv",
+      "sha256": "a32abcab878588f7ddf2f74b069f872acd39400a360a4741badb714de71d9854"
+    },
+    {
+      "path": "C:\\Users\\hechuan\\Documents\\知识图谱+本地差分隐私\\SemMed-LDP\\configs\\formal_graph_edges.csv",
+      "sha256": "71c40ff468bc4862a6b1fc43b550b5efa569f1a04168a10d4325c53aef7308f5"
+    },
+    {
+      "path": "C:\\Users\\hechuan\\Documents\\知识图谱+本地差分隐私\\SemMed-LDP\\data\\knowledge\\resource_manifest.json",
+      "sha256": "79266a1d5dbe9bc6d278596347e6d6d88aae264549d9418bd5996e890fc06e5f"
+    }
+  ]
+}

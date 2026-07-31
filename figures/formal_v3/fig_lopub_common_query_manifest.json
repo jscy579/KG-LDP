@@ -1,0 +1,46 @@
+{
+  "project_id": "SemMed-LDP",
+  "generated_at_utc": "2026-07-23T06:34:32Z",
+  "script": {
+    "path": "experiments/plot_formal_v3_results.py",
+    "sha256": "5FFBEF76FEFAC59875BC228225B0DBE50F1B9898CED250E8AC9042677B104768"
+  },
+  "config": {
+    "path": "configs/formal_experiment.yaml",
+    "sha256": "8ED34C3240BC665978DF226A59159E68A6ECDD8F9D5B1C1DA9A14AB0B8DDA0D5"
+  },
+  "formal_input": {
+    "path": "results/formal_v3/lopub_common_query_summary.csv",
+    "sha256": "BC3C214CA20D565E148477045F06E7CF622C6862775D556B42078C45601F84C1"
+  },
+  "source_data": {
+    "path": "figures/formal_v3/source_data/fig_lopub_common_query.csv",
+    "sha256": "E3E8650852727E6E5C6760AEA1DA296E9E8734C1B9D3FB54C31B100342B5192D"
+  },
+  "comparison_contract": {
+    "strategy": "Smp",
+    "reports_per_user": 1,
+    "paired_group_selection": true,
+    "privacy_budget": "same complete user-level epsilon",
+    "target": "same four ontology-group three-state distributions",
+    "repeats": 30
+  },
+  "outputs": [
+    {
+      "path": "figures/formal_v3/fig_lopub_common_query.svg",
+      "sha256": "B1570B497F11D4DE8306658104D07F397D8E3672D8B101E30D2B8BE1A2785DCF"
+    },
+    {
+      "path": "figures/formal_v3/fig_lopub_common_query.pdf",
+      "sha256": "E5361B9E6B43EED44C90EAC567E8CE767ECD6364E8617CA062D0BC05A6B0BC5A"
+    },
+    {
+      "path": "figures/formal_v3/fig_lopub_common_query.tiff",
+      "sha256": "B1DBDD7471274166819B7AE6101773741811ED38335F8472E39C24E7757E0F79"
+    },
+    {
+      "path": "figures/formal_v3/fig_lopub_common_query.png",
+      "sha256": "6BDA0A494C096813C195C4DCC7F4D828904A316AF8AE0CFCD6A59498BC7F4E87"
+    }
+  ]
+}

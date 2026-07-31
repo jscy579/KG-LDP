@@ -1,0 +1,50 @@
+{
+  "generated_at_utc": "2026-07-31T06:06:23.951726+00:00",
+  "script": "experiments\\plot_relative_mse_improvement.py",
+  "backend": "Python/matplotlib",
+  "metric": "100 * (mean MSE_baseline - mean MSE_KGR-LDP) / mean MSE_baseline",
+  "interval": "paired percentile 95% Monte Carlo interval over 30 randomized-run pairs",
+  "bootstrap_seed": 2026,
+  "bootstrap_replicates": 20000,
+  "significance": "paired Wilcoxon signed-rank tests with Holm correction from formal-v3",
+  "inputs": [
+    {
+      "path": "results\\formal_v3\\PIC\\representation_comparison\\inferential_run_metrics.csv",
+      "sha256": "8c4ed677ca993c404c89018c029096727b8f470098c5e4b902eb6b3fd2e9216b"
+    },
+    {
+      "path": "results\\formal_v3\\PIC\\representation_comparison\\paired_wilcoxon_holm.csv",
+      "sha256": "1dbba113be5b616e6b963a4c7527cab5b8adab7553a04fb74f89bad7015c4c8a"
+    },
+    {
+      "path": "results\\formal_v3\\NHANES_2021_2023\\representation_comparison\\inferential_run_metrics.csv",
+      "sha256": "424822ad72f9a86288f12ea3b3584e478af783515f6484ee6cb01e7ffffa0615"
+    },
+    {
+      "path": "results\\formal_v3\\NHANES_2021_2023\\representation_comparison\\paired_wilcoxon_holm.csv",
+      "sha256": "901793c2b8b86dbdbe7b6e953379189db16fe74fecfa588ce8a96f6d243bd3f5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "figures\\formal_v3\\source_data\\fig_relative_mse_improvement.csv",
+      "sha256": "e0df209f45484a64d94c708b2397ba7997aa9a7bfc1de094a515ba61345af760"
+    },
+    {
+      "path": "figures\\formal_v3\\fig_relative_mse_improvement.svg",
+      "sha256": "d4eed2ffe4471d433cbbb50685edd7e18fed9b14c94544f49f76cca7c4d7db8d"
+    },
+    {
+      "path": "figures\\formal_v3\\fig_relative_mse_improvement.pdf",
+      "sha256": "56a11855740d2a650b682875ef0f3904bc932ee640a1b4fd3418094061530b74"
+    },
+    {
+      "path": "figures\\formal_v3\\fig_relative_mse_improvement.tiff",
+      "sha256": "34c1cb1d34d4247886c16e5e65475af8c658ce7c249ad082bedd8a06f38295c5"
+    },
+    {
+      "path": "figures\\formal_v3\\fig_relative_mse_improvement.png",
+      "sha256": "a4ecc762f92c51cabeb2a5c0ecc6beadaa1e038955547269664c52843655faf3"
+    }
+  ]
+}

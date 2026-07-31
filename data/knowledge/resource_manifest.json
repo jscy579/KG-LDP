@@ -1,0 +1,96 @@
+{
+  "project_id": "SemMed-LDP",
+  "generated_at_utc": "2026-07-14T10:24:22.411024+00:00",
+  "resources": [
+    {
+      "name": "LOINC table",
+      "version": "2.82",
+      "project_relative_path": "data/knowledge/loinc/2.82/LoincTable/Loinc.csv",
+      "bytes": 82244517,
+      "sha256": "6187d5b2fcd89398fba45073f706fd15e24d0563afb750d9fef533881442fe1d",
+      "source_url": "https://loinc.org/downloads/",
+      "license_url": "https://loinc.org/kb/license/",
+      "redistribution_policy": "do_not_redistribute"
+    },
+    {
+      "name": "LOINC Groups",
+      "version": "2.82",
+      "project_relative_path": "data/knowledge/loinc/2.82/AccessoryFiles/GroupFile/Group.csv",
+      "bytes": 595785,
+      "sha256": "f2dcbe8f9d4204dc22e9f18f2de10241e03fe46f08de68fe266e8e12d0e31450",
+      "source_url": "https://loinc.org/groups/",
+      "license_url": "https://loinc.org/kb/license/",
+      "redistribution_policy": "do_not_redistribute"
+    },
+    {
+      "name": "LOINC Group terms",
+      "version": "2.82",
+      "project_relative_path": "data/knowledge/loinc/2.82/AccessoryFiles/GroupFile/GroupLoincTerms.csv",
+      "bytes": 4270893,
+      "sha256": "0194fab6ba0bc32127d3bc85981aa5ab6d725b7212d62b347e2bc71a222ad19a",
+      "source_url": "https://loinc.org/groups/",
+      "license_url": "https://loinc.org/kb/license/",
+      "redistribution_policy": "do_not_redistribute"
+    },
+    {
+      "name": "LOINC Parent Groups",
+      "version": "2.82",
+      "project_relative_path": "data/knowledge/loinc/2.82/AccessoryFiles/GroupFile/ParentGroup.csv",
+      "bytes": 4130,
+      "sha256": "5b9d7d2f11bb510c991e5440ed8c403e91251b3d6a7539bcaccf075a3754ea4e",
+      "source_url": "https://loinc.org/groups/",
+      "license_url": "https://loinc.org/kb/license/",
+      "redistribution_policy": "do_not_redistribute"
+    },
+    {
+      "name": "LOINC license",
+      "version": "5.8",
+      "project_relative_path": "data/knowledge/loinc/2.82/LoincLicense_5.8.txt",
+      "bytes": 25709,
+      "sha256": "05eb5069f8352b0513fe8c911d8a432e8ddc2d09f999b6f153617f2afd16ad85",
+      "source_url": "https://loinc.org/kb/license/",
+      "license_url": "https://loinc.org/kb/license/",
+      "redistribution_policy": "do_not_redistribute"
+    },
+    {
+      "name": "Human Phenotype Ontology",
+      "version": "2026-02-16",
+      "project_relative_path": "data/knowledge/hpo/hp.obo",
+      "bytes": 11259310,
+      "sha256": "781cb5d7b0cca9d594c62f9404bd259ac0895ca69c80f40e8990ff49b7bde0d0",
+      "source_url": "https://github.com/obophenotype/human-phenotype-ontology/releases/tag/v2026-02-16",
+      "license_url": "https://hpo.jax.org/app/license",
+      "redistribution_policy": "follow_source_license"
+    },
+    {
+      "name": "NHANES demographics",
+      "version": "2021-2023",
+      "project_relative_path": "data/raw/nhanes_2021_2023/DEMO_L.XPT",
+      "bytes": 2582160,
+      "sha256": "ca4374a158b493b8b0163e1388da21d57a18d1b9cecff2aa4e2fa2bec494fe23",
+      "source_url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.htm",
+      "license_url": "https://www.cdc.gov/other/agencymaterials.html",
+      "redistribution_policy": "follow_source_license"
+    },
+    {
+      "name": "NHANES complete blood count",
+      "version": "2021-2023",
+      "project_relative_path": "data/raw/nhanes_2021_2023/CBC_L.XPT",
+      "bytes": 1609840,
+      "sha256": "4405da2a5899dcd11e3ef4dbec0b4d2fca6d736a3efa7a85afee668baa95923f",
+      "source_url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/CBC_L.htm",
+      "license_url": "https://www.cdc.gov/other/agencymaterials.html",
+      "redistribution_policy": "follow_source_license"
+    },
+    {
+      "name": "NHANES biochemistry profile",
+      "version": "2021-2023",
+      "project_relative_path": "data/raw/nhanes_2021_2023/BIOPRO_L.XPT",
+      "bytes": 2425520,
+      "sha256": "912b345aad6b71d53a3bc299a7f3bb0d5530e9fa5b6e76d2d00103979861a476",
+      "source_url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BIOPRO_L.htm",
+      "license_url": "https://www.cdc.gov/other/agencymaterials.html",
+      "redistribution_policy": "follow_source_license"
+    }
+  ]
+}

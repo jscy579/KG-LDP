@@ -1,0 +1,68 @@
+{
+  "generated_at_utc": "2026-07-23T06:31:19.578575+00:00",
+  "script": "experiments\\run_lopub_joint_distribution_experiment.py",
+  "paper": {
+    "title": "LoPub: High-Dimensional Crowdsourced Data Publication With Local Differential Privacy",
+    "doi": "10.1109/TIFS.2018.2812146",
+    "implementation_scope": "LoPub-derived Bloom randomized response and EM joint estimation embedded in Smp; no Lasso or synthetic-data generation"
+  },
+  "comparison_contract": {
+    "target": "same four ontology-group, three-state query distributions",
+    "strategy": "Smp",
+    "reports_per_user": 1,
+    "paired_group_selection": true,
+    "user_level_epsilon": "same complete epsilon for every transmitted report"
+  },
+  "parameters": {
+    "bloom_bits": 64,
+    "hash_functions": 5,
+    "convergence_gap": 0.001,
+    "min_iterations": 25,
+    "max_iterations": 500,
+    "group_privacy_relation": "epsilon = 2*k_j*h*ln((2-f_j)/f_j)"
+  },
+  "inputs": [
+    {
+      "path": "data\\processed\\working\\nhanes_feature_matrix.csv",
+      "sha256": "d2cb6e9b623b408f31f4a0befe4cfc0d8b373f9b2bb2e73dcbe1684ee42e5ddd"
+    },
+    {
+      "path": "data\\processed\\working\\nhanes_metadata.csv",
+      "sha256": "91f2d2582ee9505c0569aac1d528a113067a5b402c36b7b061c5ce5d47753635"
+    },
+    {
+      "path": "configs\\formal_attribute_mapping.csv",
+      "sha256": "fba4e54c9a23767cbf688ca557dbae3e22096e8ecff1794dbf93a277ba1a5318"
+    },
+    {
+      "path": "configs\\reference_intervals.csv",
+      "sha256": "b14b1bfc4b5fe9d002e411a5b2c14ad324701a54ecc47b179a2853b3ab6a07cb"
+    },
+    {
+      "path": "configs\\formal_experiment.yaml",
+      "sha256": "8ed34c3240bc665978df226a59159e68a6ecdd8f9d5b1c1da9a14ab0b8dda0d5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "results\\formal_v3\\NHANES_2021_2023\\lopub_joint_distribution\\run_metrics.csv",
+      "sha256": "73092aa954bc06667dc81f2207d0f94e3688ea704f3194f29f1ed1ec7cdac970"
+    },
+    {
+      "path": "results\\formal_v3\\NHANES_2021_2023\\lopub_joint_distribution\\run_diagnostics.csv",
+      "sha256": "62e787070ffe75b617c0c74a13891d70c1aa99b9d1e1911ca497ac4594765fd7"
+    },
+    {
+      "path": "results\\formal_v3\\NHANES_2021_2023\\lopub_joint_distribution\\run_estimates.csv",
+      "sha256": "10146e451a83faf4ff0f3f5d4d31626a991061789b649a0983d8d5839e344b6c"
+    },
+    {
+      "path": "results\\formal_v3\\NHANES_2021_2023\\lopub_joint_distribution\\summary_bootstrap_ci.csv",
+      "sha256": "06238495e0955b2f4501dad380090f0f50d7a3315662bf8de46fd21de3bfef33"
+    },
+    {
+      "path": "results\\formal_v3\\NHANES_2021_2023\\lopub_joint_distribution\\common_query_comparison.csv",
+      "sha256": "73092aa954bc06667dc81f2207d0f94e3688ea704f3194f29f1ed1ec7cdac970"
+    }
+  ]
+}
