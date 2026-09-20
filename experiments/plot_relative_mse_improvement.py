@@ -25,8 +25,8 @@ DATASETS = ["PIC", "NHANES_2021_2023"]
 DISPLAY_DATASET = {"PIC": "PIC", "NHANES_2021_2023": "NHANES 2021--2023"}
 BASELINES = ["Matched-Random-4D", "External-Correlation-4D"]
 LABELS = {
-    "Matched-Random-4D": "vs 100 matched random 4D",
-    "External-Correlation-4D": "vs external-correlation 4D",
+    "Matched-Random-4D": "Random grouping",
+    "External-Correlation-4D": "Cross-cohort correlation grouping",
 }
 COLORS = {
     "Matched-Random-4D": "#D07A3E",
@@ -162,11 +162,11 @@ def plot_relative_improvement(source: pd.DataFrame) -> plt.Figure:
             local = source[
                 source["dataset_id"].eq(dataset_id) & source["mechanism"].eq(mechanism)
             ]
-            ax.axhspan(0, 40, color="#E8F1EC", alpha=0.55, zorder=0)
-            ax.axhspan(-35, 0, color="#F2F2F2", alpha=0.7, zorder=0)
+            #ax.axhspan(0, 40, color="#E8F1EC", alpha=0.55, zorder=0)
+            #ax.axhspan(-35, 0, color="#F2F2F2", alpha=0.7, zorder=0)
             ax.axhline(0, color="#444444", lw=0.8, zorder=1)
 
-            for baseline_index, baseline in enumerate(BASELINES):
+            for baseline in BASELINES:
                 values = local[local["baseline"].eq(baseline)].sort_values("epsilon")
                 x = values["epsilon"].to_numpy(float)
                 estimate = values["relative_MSE_improvement_percent"].to_numpy(float)
@@ -190,22 +190,6 @@ def plot_relative_improvement(source: pd.DataFrame) -> plt.Figure:
                     linewidth=0,
                     zorder=2,
                 )
-                significant = values["holm_significant_0_05"].to_numpy(bool)
-                for x_value, y_value, is_significant in zip(x, estimate, significant):
-                    if is_significant:
-                        ax.annotate(
-                            "*",
-                            (x_value, y_value),
-                            xytext=(0, 5 + 5 * baseline_index),
-                            textcoords="offset points",
-                            ha="center",
-                            va="bottom",
-                            color=COLORS[baseline],
-                            fontsize=8,
-                            fontweight="bold",
-                            zorder=4,
-                        )
-
             ax.set_xscale("log", base=2)
             ax.set_xticks(EPSILONS, ["0.1", "0.25", "0.5", "1", "2", "4", "8"])
             ax.set_ylim(-35, 40)
@@ -248,15 +232,6 @@ def plot_relative_improvement(source: pd.DataFrame) -> plt.Figure:
 
     handles, labels = axes[0, 0].get_legend_handles_labels()
     fig.legend(handles, labels, loc="upper center", ncol=2, bbox_to_anchor=(0.5, 1.01))
-    fig.text(
-        0.5,
-        0.01,
-        "* Holm-adjusted paired Wilcoxon p < 0.05; bands: paired 95% Monte Carlo interval",
-        ha="center",
-        va="bottom",
-        fontsize=6.2,
-        color="#555555",
-    )
     fig.subplots_adjust(top=0.89, bottom=0.12, hspace=0.30, wspace=0.20)
     return fig
 
@@ -301,7 +276,7 @@ def main() -> None:
         "interval": "paired percentile 95% Monte Carlo interval over 30 randomized-run pairs",
         "bootstrap_seed": seed,
         "bootstrap_replicates": n_bootstrap,
-        "significance": "paired Wilcoxon signed-rank tests with Holm correction from formal-v3",
+        "significance": "not encoded in the figure",
         "inputs": [
             {"path": str(path.relative_to(PROJECT_ROOT)), "sha256": sha256_file(path)}
             for path in inputs
@@ -325,7 +300,7 @@ def main() -> None:
 - Inputs: full-cohort inferential run metrics; 30 paired repeat-level observations per comparison.
 - Center: relative improvement computed from paired-run mean MSEs.
 - Interval: paired percentile 95% Monte Carlo interval, {n_bootstrap:,} resamples, seed {seed}.
-- Test: paired Wilcoxon signed-rank test; Holm correction within the existing formal-v3 comparison family.
+- Significance markers: none; inferential results are reported in the manuscript text.
 - Positive values: KGR-LDP lower MSE. Negative values: named baseline lower MSE.
 - Random control: each repeat is the mean of 100 matched random partitions; partitions are not treated as independent replicates.
 - Export: editable SVG and PDF; 600 dpi TIFF; PNG preview.

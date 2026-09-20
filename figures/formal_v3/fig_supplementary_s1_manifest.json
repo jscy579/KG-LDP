@@ -1,0 +1,20 @@
+{
+  "figure": "Supplementary Figure S1",
+  "claim": "The nested D10, D20, and D40 panels preserve the frozen attribute-to-group mapping while exposing attribute missingness and group-level semantic-state composition.",
+  "inputs": [
+    "results/schema_expansion/attribute_missingness_and_states.csv",
+    "results/schema_expansion/state_concentration.csv",
+    "results/schema_expansion/supplement_table_s1_mapping.csv"
+  ],
+  "source_data": [
+    "figures/formal_v3/fig_supplementary_s1_missingness.csv",
+    "figures/formal_v3/fig_supplementary_s1_state_composition.csv"
+  ],
+  "outputs": [
+    "figures/formal_v3/fig_supplementary_s1.svg",
+    "figures/formal_v3/fig_supplementary_s1.pdf",
+    "figures/formal_v3/fig_supplementary_s1.tiff",
+    "figures/formal_v3/fig_supplementary_s1.png"
+  ],
+  "validation": "Attribute IDs, names, cumulative panel membership, group sizes, and state-proportion sums were checked before plotting."
+}

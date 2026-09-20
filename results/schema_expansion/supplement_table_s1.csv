@@ -1,0 +1,41 @@
+Attribute,NHANES Variable,LOINC,Unit,Reference/Decision Rule,HPO Anchor,Final Semantic Group,Panel
+Sodium,LBXSNASI,2951-2,mmol/L,"Any, age >= 18: x >= 135 AND x <= 145",HP:0003111 (Abnormal circulating electrolyte concentration),G1,D10
+Chloride,LBXSCLSI,2075-0,mmol/L,"Any, age >= 18: x >= 98 AND x <= 107",HP:0003111 (Abnormal circulating electrolyte concentration),G1,D10
+Magnesium,LBXMAGN,19123-9,mg/dL,"Any, age >= 18: x >= 1.7 AND x <= 2.3",HP:0003111 (Abnormal circulating electrolyte concentration),G1,D10
+Phosphate (phosphorus),LBXSPH,2777-1,mg/dL,"Male, age >= 18: x >= 2.5 AND x <= 4.5; Female, age >= 18: x >= 2.5 AND x <= 4.5",HP:0003111 (Abnormal circulating electrolyte concentration),G1,D10
+Creatinine,LBXSCR,2160-0,mg/dL,"Male, age >= 18: x >= 0.74 AND x <= 1.35; Female, age >= 18: x >= 0.59 AND x <= 1.04",HP:0004364 (Abnormal circulating nitrogen compound concentration),G2,D10
+Urea nitrogen (BUN),LBXSBU,3094-0,mg/dL,"Male, age >= 18: x >= 8 AND x <= 24; Female, age >= 18: x >= 6 AND x <= 21",HP:0004364 (Abnormal circulating nitrogen compound concentration),G2,D10
+Glucose,LBXSGL,2345-7,mg/dL,"Any, age >= 18: x >= 70 AND x <= 140",HP:0001939 (Abnormality of metabolism/homeostasis),G3,D10
+Albumin,LBXSAL,1751-7,g/dL,"Any, age >= 18: x >= 3.5 AND x <= 5.0",HP:0001939 (Abnormality of metabolism/homeostasis),G3,D10
+Hemoglobin,LBXHGB,718-7,g/dL,"Male, age >= 18: x >= 13.2 AND x <= 16.6; Female, age >= 18: x >= 11.6 AND x <= 15.0",HP:0001871 (Abnormality of blood and blood-forming tissues),G4,D10
+Platelet count,LBXPLTSI,777-3,10^3 cells/µL,"Male, age >= 18: x >= 135 AND x <= 317; Female, age >= 18: x >= 157 AND x <= 371",HP:0001871 (Abnormality of blood and blood-forming tissues),G4,D10
+Potassium,LBXSKSI,2823-3,mmol/L,"Any, age >= 18: x >= 3.6 AND x <= 5.2",HP:0003111 (Abnormal circulating electrolyte concentration),G1,D20
+Bicarbonate,LBXSC3SI,1963-8,mmol/L,"Any, age >= 18: x >= 22 AND x <= 29",HP:0003111 (Abnormal circulating electrolyte concentration),G1,D20
+Total calcium,LBXSCA,17861-6,mg/dL,"Any, age >= 18: x >= 8.6 AND x <= 10.0; Any, age >= 60: x >= 8.8 AND x <= 10.2",HP:0003111 (Abnormal circulating electrolyte concentration),G1,D20
+Total protein,LBXSTP,2885-2,g/dL,"Any, age >= 18: x >= 6.3 AND x <= 7.9",HP:0001939 (Abnormality of metabolism/homeostasis),G3,D20
+Alanine aminotransferase (ALT),LBXSATSI,1742-6,IU/L,"Male, age >= 18: x >= 7 AND x <= 55; Female, age >= 18: x >= 7 AND x <= 45",HP:0012379 (Abnormal circulating enzyme concentration or activity),G5,D20
+Aspartate aminotransferase (AST),LBXSASSI,1920-8,IU/L,"Male, age >= 18: x >= 8 AND x <= 48; Female, age >= 18: x >= 8 AND x <= 43",HP:0012379 (Abnormal circulating enzyme concentration or activity),G5,D20
+Alkaline phosphatase (ALP),LBXSAPSI,6768-6,IU/L,"Male, age >= 18: x >= 55 AND x <= 149; Male, age >= 19: x >= 40 AND x <= 129; Female, age >= 18: x >= 35 AND x <= 104",HP:0012379 (Abnormal circulating enzyme concentration or activity),G5,D20
+Gamma-glutamyl transferase (GGT),LBXSGTSI,2324-2,IU/L,"Male, age >= 18: x >= 8 AND x <= 61; Female, age >= 18: x >= 5 AND x <= 36",HP:0012379 (Abnormal circulating enzyme concentration or activity),G5,D20
+Total bilirubin,LBXSTB,1975-2,mg/dL,"Any, age >= 18: x >= 0 AND x <= 1.2",HP:0001939 (Abnormality of metabolism/homeostasis),G3,D20
+Uric acid,LBXSUA,3084-1,mg/dL,"Male, age >= 18: x >= 3.7 AND x <= 8.0; Female, age >= 18: x >= 2.7 AND x <= 6.1",HP:0004364 (Abnormal circulating nitrogen compound concentration),G2,D20
+Creatine kinase (CK/CPK),LBXSCK,2157-6,U/L,"Male, age >= 18: x >= 39 AND x <= 308; Female, age >= 18: x >= 26 AND x <= 192",HP:0012379 (Abnormal circulating enzyme concentration or activity),G5,D40
+Lactate dehydrogenase (LDH),LBXSLDSI,14804-9,U/L,"Any, age >= 18: x >= 122 AND x <= 222",HP:0012379 (Abnormal circulating enzyme concentration or activity),G5,D40
+Iron,LBXSIR,2498-4,µg/dL,"Male, age >= 18: x >= 50 AND x <= 150; Female, age >= 18: x >= 35 AND x <= 145",HP:0040130 (Abnormal circulating iron concentration),G10,D40
+Total cholesterol,LBXTC,2093-3,mg/dL,"Any, age >= 18: x < 200",HP:0003119 (Abnormal circulating lipid concentration),G6,D40
+HDL cholesterol,LBDHDD,2085-9,mg/dL,"Male, age >= 18: x >= 40; Female, age >= 18: x >= 50",HP:0003119 (Abnormal circulating lipid concentration),G6,D40
+White blood cell count,LBXWBCSI,6690-2,10^3 cells/µL,"Male, age >= 18: x >= 3.6 AND x <= 10.2; Female, age >= 18: x >= 3.8 AND x <= 11.8",HP:0001881 (Abnormal leukocyte morphology),G7,D40
+Lymphocyte percent,LBXLYPCT,736-9,%,"Male, age >= 18: x >= 15.2 AND x <= 43.3; Female, age >= 18: x >= 16.0 AND x <= 45.9",HP:0001881 (Abnormal leukocyte morphology),G7,D40
+Monocyte percent,LBXMOPCT,5905-5,%,"Male, age >= 18: x >= 5.5 AND x <= 13.7; Female, age >= 18: x >= 4.3 AND x <= 10.9",HP:0001881 (Abnormal leukocyte morphology),G7,D40
+Neutrophil percent,LBXNEPCT,770-8,%,"Male, age >= 18: x >= 43.5 AND x <= 73.5; Female, age >= 18: x >= 42.7 AND x <= 76.8",HP:0001881 (Abnormal leukocyte morphology),G7,D40
+Eosinophil percent,LBXEOPCT,713-8,%,"Male, age >= 18: x >= 0.8 AND x <= 8.1; Female, age >= 18: x >= 0.5 AND x <= 7.0",HP:0001881 (Abnormal leukocyte morphology),G7,D40
+Basophil percent,LBXBAPCT,706-2,%,"Male, age >= 18: x >= 0.2 AND x <= 1.5; Female, age >= 18: x >= 0.2 AND x <= 1.3",HP:0001881 (Abnormal leukocyte morphology),G7,D40
+Red blood cell count,LBXRBCSI,789-8,10^6 cells/µL,"Male, age >= 18: x >= 4.06 AND x <= 5.63; Female, age >= 18: x >= 3.63 AND x <= 4.92",HP:0001877 (Abnormal erythrocyte morphology),G8,D40
+Hematocrit,LBXHCT,4544-3,%,"Male, age >= 18: x >= 36.7 AND x <= 47.1; Female, age >= 18: x >= 31.2 AND x <= 41.9",HP:0001877 (Abnormal erythrocyte morphology),G8,D40
+Mean corpuscular volume (MCV),LBXMCVSI,787-2,fL,"Male, age >= 18: x >= 73.0 AND x <= 96.2; Female, age >= 18: x >= 75.5 AND x <= 95.3",HP:0001877 (Abnormal erythrocyte morphology),G8,D40
+Red cell distribution width (RDW),LBXRDW,788-0,%,"Male, age >= 18: x >= 12.1 AND x <= 16.2; Female, age >= 18: x >= 12.3 AND x <= 17.7",HP:0001877 (Abnormal erythrocyte morphology),G8,D40
+Nucleated red blood cells (NRBC),LBXNRBC,58413-6,/100 WBC,"Male, age >= 18: x >= 0.0 AND x <= 0.6; Female, age >= 18: x >= 0.0 AND x <= 0.3",HP:0001877 (Abnormal erythrocyte morphology),G8,D40
+Mean platelet volume (MPV),LBXMPSI,32623-1,fL,"Male, age >= 18: x >= 7.4 AND x <= 11.4; Female, age >= 18: x >= 7.9 AND x <= 10.8",HP:0011876 (Abnormal platelet volume),G9,D40
+Glycohemoglobin (HbA1c),LBXGH,4548-4,%,"Any, age >= 18: x < 5.7",HP:0001939 (Abnormality of metabolism/homeostasis),G3,D40
+High-sensitivity C-reactive protein (hs-CRP),LBXHSCRP,30522-7,mg/L,"Any, age >= 18: x < 2.0",HP:0032436 (Abnormal circulating C-reactive protein concentration),G11,D40
+25-hydroxyvitamin D2 + D3,LBXVIDMS,68438-1,nmol/L,"Any, age >= 18: x >= 50 AND x <= 125",HP:0100511 (Abnormal circulating vitamin D concentration),G12,D40

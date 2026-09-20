@@ -29,6 +29,9 @@ distributions.
   policies. The complete LOINC and HPO distributions are not bundled.
 - `results/formal_v3/`: run-level metrics, paired statistical tests, bootstrap
   summaries, estimates, and provenance manifests used by the paper.
+- `results/schema_expansion/`: D10/D20/D40 schema-expansion run metrics,
+  random partitions, runtime measurements, frozen mapping tables, and figure
+  source data.
 - `figures/formal_v3/source_data/`: clean source-data tables underlying the
   paper figures.
 - `figures/formal_v3/`: reproducible PDF, PNG, and SVG outputs and figure
@@ -66,9 +69,34 @@ The script regenerates:
 - `fig_information_privacy_tradeoff`
 - `fig_relative_mse_improvement`
 - the KGR-LDP framework figure
+- the D10/D20/D40 schema-expansion figure
+- Supplementary Figures S1 and S2
 
 All numerical panels read the included formal-v3 results or the included local
 analysis matrices. Figure values are not entered manually.
+
+## Re-run the schema-expansion experiment
+
+The schema-expansion experiment uses the frozen 40-attribute design in
+`configs/schema_expansion_design.xlsx` and the public NHANES components under
+`data/raw/nhanes_2021_2023/`:
+
+```powershell
+python experiments/run_schema_expansion_experiment.py
+```
+
+The full run writes its outputs to `results/schema_expansion/`. To regenerate
+only Figure 6 and Supplementary Figures S1--S2 from the included result tables:
+
+```powershell
+python experiments/plot_schema_expansion.py
+python experiments/plot_supplementary_figure_s1.py
+python experiments/plot_supplementary_figure_s2.py
+```
+
+The experiment uses 30 perturbation runs for each condition, 100 fixed random
+partitions, GRR and OUE, and privacy budgets
+`0.1, 0.25, 0.5, 1, 2, 4, 8`.
 
 ## Re-run the formal-v3 experiments
 

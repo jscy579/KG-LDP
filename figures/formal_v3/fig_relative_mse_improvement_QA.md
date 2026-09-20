@@ -6,7 +6,7 @@
 - Inputs: full-cohort inferential run metrics; 30 paired repeat-level observations per comparison.
 - Center: relative improvement computed from paired-run mean MSEs.
 - Interval: paired percentile 95% Monte Carlo interval, 20,000 resamples, seed 2026.
-- Test: paired Wilcoxon signed-rank test; Holm correction within the existing formal-v3 comparison family.
+- Significance markers: none; inferential results are reported in the manuscript text.
 - Positive values: KGR-LDP lower MSE. Negative values: named baseline lower MSE.
 - Random control: each repeat is the mean of 100 matched random partitions; partitions are not treated as independent replicates.
 - Export: editable SVG and PDF; 600 dpi TIFF; PNG preview.

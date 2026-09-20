@@ -1,0 +1,107 @@
+{
+  "experiment": "Experiment 5: dimensional scaling D10/D20/D40",
+  "status": "complete",
+  "generated_at_local": "2026-09-08 18:33:16",
+  "cohort": "NHANES August 2021-August 2023, adults aged >=18",
+  "n_users": 8153,
+  "panels": [
+    10,
+    20,
+    40
+  ],
+  "epsilon_list": [
+    0.1,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "mechanisms": [
+    "GRR",
+    "OUE"
+  ],
+  "strategy": "Smp",
+  "repeat_runs": 30,
+  "random_partitions": 100,
+  "base_seed": 2026,
+  "state_encoding": {
+    "0": "no abnormality",
+    "1": "abnormality present",
+    "2": "all values missing"
+  },
+  "random_aggregation": "MSE averaged over 100 fixed size-matched partitions within each perturbation run",
+  "runtime_protocol": "KGR-LDP; one warm-up plus ten timed repeats; vectorized NumPy implementation",
+  "software": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "logical_cpu_count": 20,
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "multithreading": "disabled through OMP/MKL/OpenBLAS/NumExpr environment variables"
+  },
+  "inputs": [
+    {
+      "path": "configs/schema_expansion_design.xlsx",
+      "bytes": 50733,
+      "sha256": "c5243df6bd5795496f257be2c9574d303f11f11806b2923e54e6195ba7925e68"
+    },
+    {
+      "path": "data/processed/working/nhanes_metadata.csv",
+      "bytes": 375412,
+      "sha256": "91f2d2582ee9505c0569aac1d528a113067a5b402c36b7b061c5ce5d47753635"
+    },
+    {
+      "path": "data/raw/nhanes_2021_2023/BIOPRO_L.XPT",
+      "bytes": 2425520,
+      "sha256": "912b345aad6b71d53a3bc299a7f3bb0d5530e9fa5b6e76d2d00103979861a476"
+    },
+    {
+      "path": "data/raw/nhanes_2021_2023/CBC_L.XPT",
+      "bytes": 1609840,
+      "sha256": "4405da2a5899dcd11e3ef4dbec0b4d2fca6d736a3efa7a85afee668baa95923f"
+    },
+    {
+      "path": "data/raw/nhanes_2021_2023/TCHOL_L.XPT",
+      "bytes": 259520,
+      "sha256": "5c3312e555bb0706fd97cbd63fcbc9e78f00bda8d2d149732d9dd368169b25d3"
+    },
+    {
+      "path": "data/raw/nhanes_2021_2023/HDL_L.XPT",
+      "bytes": 259520,
+      "sha256": "c1bb43df5ca366f470b411c043f4aee7ae6552a7f4bca1178bc87b24fb9a7300"
+    },
+    {
+      "path": "data/raw/nhanes_2021_2023/GHB_L.XPT",
+      "bytes": 174000,
+      "sha256": "67aee0353160e2392dc0a33bece99b90764a630c76d82415ac4639105ad9dd03"
+    },
+    {
+      "path": "data/raw/nhanes_2021_2023/HSCRP_L.XPT",
+      "bytes": 280560,
+      "sha256": "c56098d7c33509087a4645dfdf39936c14213d9123e1e718831a10d5bc4e3a1b"
+    },
+    {
+      "path": "data/raw/nhanes_2021_2023/VID_L.XPT",
+      "bytes": 700320,
+      "sha256": "5901de08d633fa31f2199af53e49f434e89a2bf2cc26539b84d1787f85166fa7"
+    }
+  ],
+  "outputs": [
+    "all_partition_run_metrics.csv",
+    "attribute_missingness_and_states.csv",
+    "core_epsilon1_table.csv",
+    "frozen_rule_lookup.csv",
+    "mse_summary.csv",
+    "panel_summary.csv",
+    "random_partition_assignments.csv",
+    "run_metrics_random_collapsed.csv",
+    "runtime_repeats.csv",
+    "runtime_summary.csv",
+    "state_concentration.csv",
+    "supplement_table_s1.csv",
+    "supplement_table_s1_mapping.csv"
+  ]
+}

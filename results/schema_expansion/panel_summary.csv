@@ -1,0 +1,4 @@
+panel,n_users,n_attributes,n_semantic_dimensions,compression_ratio_d_over_m,mean_group_size,max_group_size,expected_reports_per_kgr_dimension,expected_reports_per_raw_dimension
+D10,8153,10,4,2.5,2.5,4,2038.25,815.3
+D20,8153,20,5,4.0,4.0,7,1630.6,407.65
+D40,8153,40,12,3.3333333333333335,3.3333333333333335,7,679.4166666666666,203.825

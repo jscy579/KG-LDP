@@ -1,0 +1,4 @@
+panel,median_client_seconds,median_server_seconds,n_timed_measurements,aggregation
+D10,0.03110739999101495,0.0002069499896606,20,pooled across GRR and OUE; 10 timed repeats per mechanism
+D20,0.04487744999642015,0.00023489998420695,20,pooled across GRR and OUE; 10 timed repeats per mechanism
+D40,0.07497755000076714,0.00039489999471694996,20,pooled across GRR and OUE; 10 timed repeats per mechanism

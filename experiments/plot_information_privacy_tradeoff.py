@@ -68,10 +68,10 @@ MARKERS = {
 LABELS = {
     "Raw-Attribute-LDP": "Raw 10D",
     "SemMed-LDP": "KGR-LDP 4D",
-    "Source-Schema-LDP": "Source-Schema 2--3D",
+    "Source-Schema-LDP": "Source Schema 2--3D",
     "LOINC-Class-LDP": "LOINC Class 2D",
-    "External-Correlation-4D": "external-correlation 4D",
-    "Matched-Random-4D": "100 matched random 4D",
+    "External-Correlation-4D": "Cross-cohort 4D",
+    "Matched-Random-4D": "Random 4D",
 }
 
 mpl.rcParams.update(
@@ -278,7 +278,7 @@ def build_source_data(epsilon: float, seed: int, n_random_partitions: int) -> tu
 
 
 def plot_information_privacy_tradeoff(source: pd.DataFrame, epsilon: float) -> plt.Figure:
-    fig, axes = plt.subplots(2, 2, figsize=(7.2, 5.25), sharex=False, sharey=True)
+    fig, axes = plt.subplots(2, 2, figsize=(7.2, 5.25), sharex=True, sharey=True)
     for row, dataset_id in enumerate(DATASET_CONFIG):
         for column, mechanism in enumerate(["GRR", "OUE"]):
             ax = axes[row, column]
@@ -335,17 +335,17 @@ def plot_information_privacy_tradeoff(source: pd.DataFrame, epsilon: float) -> p
                 va="bottom",
             )
             if row == 1:
-                ax.set_xlabel(rf"Full-cohort MSE at $\epsilon={epsilon:g}$ (lower is better)")
+                ax.set_xlabel(rf"MSE at $\epsilon={epsilon:g}$")
             if column == 0:
                 ax.set_ylabel(r"Raw-state information retention $R_{\mathrm{MI}}$")
-            ax.text(
-                0.02,
-                0.04,
-                "higher retention / lower error",
-                transform=ax.transAxes,
-                fontsize=6.2,
-                color="#5A5A5A",
-            )
+            #ax.text(
+            #    0.02,
+            #    0.04,
+            #    "higher retention / lower error",
+            #    transform=ax.transAxes,
+            #    fontsize=6.2,
+            #    color="#5A5A5A",
+            #)
 
     handles, labels = axes[0, 0].get_legend_handles_labels()
     unique = dict(zip(labels, handles))
@@ -354,10 +354,10 @@ def plot_information_privacy_tradeoff(source: pd.DataFrame, epsilon: float) -> p
         unique.keys(),
         loc="upper center",
         ncol=3,
-        bbox_to_anchor=(0.5, 1.01),
-        frameon=False,
+        bbox_to_anchor=(0.5, 0.985),
+        frameon=True,
     )
-    fig.subplots_adjust(top=0.82, hspace=0.31, wspace=0.22)
+    fig.subplots_adjust(top=0.88, hspace=0.31, wspace=0.22)
     return fig
 
 

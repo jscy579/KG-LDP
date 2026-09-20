@@ -1,0 +1,20 @@
+{
+  "figure": "Figure 6. Schema-expansion scalability of KGR-LDP on NHANES.",
+  "panels": {
+    "a": "Raw and semantic release dimensions for D10, D20, and D40.",
+    "b": "Mean MSE at epsilon=1 with 95% percentile bootstrap intervals from 30 perturbation runs.",
+    "c": "Median client-side and server-side runtime pooled across GRR and OUE, with ten timed repeats per mechanism after warm-up."
+  },
+  "source_files": [
+    "results/schema_expansion/panel_summary.csv",
+    "results/schema_expansion/run_metrics_random_collapsed.csv",
+    "results/schema_expansion/runtime_repeats.csv"
+  ],
+  "backend": "Python / matplotlib 3.10.3",
+  "exports": [
+    "PDF",
+    "SVG",
+    "PNG 300 dpi",
+    "TIFF 600 dpi LZW"
+  ]
+}

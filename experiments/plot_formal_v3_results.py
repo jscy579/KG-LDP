@@ -64,9 +64,9 @@ def plot_protocol_comparison() -> pd.DataFrame:
     colors = {"SemMed+Smp": "#356DB2", "SemMed+Spl": "#8C8C8C", "SemMed+RS+FD": "#D47A43"}
     markers = {"SemMed+Smp": "o", "SemMed+Spl": "s", "SemMed+RS+FD": "^"}
     labels = {
-        "SemMed+Smp": "KGR-LDP+Smp",
-        "SemMed+Spl": "KGR-LDP+Spl",
-        "SemMed+RS+FD": "KGR-LDP+RS+FD",
+        "SemMed+Smp": "Smp",
+        "SemMed+Spl": "Spl",
+        "SemMed+RS+FD": "RS+FD",
     }
     fig, axes = _panel_grid()
     source = []
@@ -112,7 +112,7 @@ def plot_protocol_comparison() -> pd.DataFrame:
             if column == 0:
                 ax.set_ylabel("Mean squared error")
     handles, labels = axes[0, 0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="upper center", ncol=3, bbox_to_anchor=(0.5, 1.01))
+    fig.legend(handles, labels, loc="upper center", ncol=3, bbox_to_anchor=(0.5, 0.985))
     fig.subplots_adjust(top=0.89, hspace=0.30, wspace=0.22)
     _save(fig, "fig_protocol_comparison")
     return pd.concat(source, ignore_index=True)
@@ -124,19 +124,19 @@ def plot_lopub_common_query_comparison() -> pd.DataFrame:
     frame = pd.read_csv(path)
     styles = {
         ("SemMed-LDP", "GRR"): {
-            "label": "KGR-LDP + GRR",
+            "label": "KGR-LDP (GRR)",
             "color": "#356DB2",
             "marker": "o",
             "linestyle": "-",
         },
         ("SemMed-LDP", "OUE"): {
-            "label": "KGR-LDP + OUE",
+            "label": "KGR-LDP (OUE)",
             "color": "#6F96C8",
             "marker": "^",
             "linestyle": "--",
         },
         ("LoPub-derived-Bloom-EM", "Bloom-RR"): {
-            "label": "LoPub-derived Bloom-EM",
+            "label": "Bloom-EM",
             "color": "#D47A43",
             "marker": "D",
             "linestyle": "-.",
@@ -171,9 +171,9 @@ def plot_lopub_common_query_comparison() -> pd.DataFrame:
         ax.set_xticks(EPSILONS, [str(value) for value in EPSILONS])
         ax.set_yscale("log")
         ax.grid(axis="y", color="#D9D9D9", lw=0.45, alpha=0.8)
-        ax.set_title(f"{DISPLAY_DATASET[dataset]} | full cohort")
+        ax.set_title(f"{DISPLAY_DATASET[dataset]}")
         ax.set_xlabel(r"Privacy budget $\epsilon$")
-        ax.set_ylabel("Common-query mean squared error")
+        ax.set_ylabel("MSE")
         ax.text(
             -0.12,
             1.04,

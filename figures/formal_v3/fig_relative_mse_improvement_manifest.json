@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-07-31T06:06:23.951726+00:00",
+  "generated_at_utc": "2026-09-14T02:59:59.733428+00:00",
   "script": "experiments\\plot_relative_mse_improvement.py",
   "backend": "Python/matplotlib",
   "metric": "100 * (mean MSE_baseline - mean MSE_KGR-LDP) / mean MSE_baseline",
   "interval": "paired percentile 95% Monte Carlo interval over 30 randomized-run pairs",
   "bootstrap_seed": 2026,
   "bootstrap_replicates": 20000,
-  "significance": "paired Wilcoxon signed-rank tests with Holm correction from formal-v3",
+  "significance": "not encoded in the figure",
   "inputs": [
     {
       "path": "results\\formal_v3\\PIC\\representation_comparison\\inferential_run_metrics.csv",
@@ -32,19 +32,19 @@
     },
     {
       "path": "figures\\formal_v3\\fig_relative_mse_improvement.svg",
-      "sha256": "d4eed2ffe4471d433cbbb50685edd7e18fed9b14c94544f49f76cca7c4d7db8d"
+      "sha256": "9deede69e065bced32d527e04cde1d981528875065df87aaccfbecea3f15fef6"
     },
     {
       "path": "figures\\formal_v3\\fig_relative_mse_improvement.pdf",
-      "sha256": "56a11855740d2a650b682875ef0f3904bc932ee640a1b4fd3418094061530b74"
+      "sha256": "3ca52e8841531b30f4fa1469d3842b3b9a6f9c56eae1fb155e9108394b23e694"
     },
     {
       "path": "figures\\formal_v3\\fig_relative_mse_improvement.tiff",
-      "sha256": "34c1cb1d34d4247886c16e5e65475af8c658ce7c249ad082bedd8a06f38295c5"
+      "sha256": "3a88758feea1a4bec1a518d518e51309094a92c794f03aa64ef8759b954ea188"
     },
     {
       "path": "figures\\formal_v3\\fig_relative_mse_improvement.png",
-      "sha256": "a4ecc762f92c51cabeb2a5c0ecc6beadaa1e038955547269664c52843655faf3"
+      "sha256": "881cb22a7d0d92442e4c13345ee3c2578dba12a75acfe2fb11e211ab9eb3f2ba"
     }
   ]
 }

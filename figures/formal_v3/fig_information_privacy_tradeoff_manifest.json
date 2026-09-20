@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-07-31T06:06:21.280691+00:00",
+  "generated_at_utc": "2026-09-14T03:10:16.800211+00:00",
   "script": "experiments\\plot_information_privacy_tradeoff.py",
   "epsilon": 1.0,
   "seed": 2026,
@@ -16,7 +16,7 @@
     },
     {
       "path": "experiments\\plot_information_privacy_tradeoff.py",
-      "sha256": "89080e42657d894538a2f1e920a7b44d93edd8b3b80a1fa6726a1861e5be14b9"
+      "sha256": "bc9fc09bffd02d6a52e3cb3efeff2467b6dbc4005321978b69020d2c539856d2"
     },
     {
       "path": "configs\\formal_experiment.yaml",

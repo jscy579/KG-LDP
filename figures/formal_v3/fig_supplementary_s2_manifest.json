@@ -1,0 +1,14 @@
+{
+  "figure": "Supplementary Figure S2",
+  "claim": "MSE scaling across D10, D20, and D40 is shown over the complete privacy-budget grid for KGR-LDP, dimension-matched Random, and Raw.",
+  "input": "results/schema_expansion/mse_summary.csv",
+  "source_data": "figures/formal_v3/fig_supplementary_s2.csv",
+  "outputs": [
+    "figures/formal_v3/fig_supplementary_s2.svg",
+    "figures/formal_v3/fig_supplementary_s2.pdf",
+    "figures/formal_v3/fig_supplementary_s2.tiff",
+    "figures/formal_v3/fig_supplementary_s2.png"
+  ],
+  "validation": "The complete 126-condition grid and 30 runs per condition were checked before plotting.",
+  "note": "Raw is retained as a scaling reference rather than a dimension-matched semantic comparator."
+}
