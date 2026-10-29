@@ -1,4 +1,4 @@
-# KGR-LDP reproducibility package
+# KG-LDP reproducibility package
 
 This directory contains the code, frozen configurations, analysis inputs,
 run-level results, and figure source data used for the current KGR-LDP
