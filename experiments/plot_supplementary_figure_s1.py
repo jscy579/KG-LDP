@@ -21,11 +21,11 @@ PANEL_ORDER = ["D10", "D20", "D40"]
 PANEL_RANK = {panel: index for index, panel in enumerate(PANEL_ORDER)}
 STATE_ORDER = [0, 1, 2]
 STATE_LABELS = {
-    0: "State 0: no abnormality",
-    1: "State 1: abnormality present",
-    2: "State 2: all missing",
+    0: "State 0: all missing",
+    1: "State 1: no abnormality",
+    2: "State 2: abnormality present",
 }
-STATE_COLORS = {0: "#4C78A8", 1: "#E28E45", 2: "#A9ADB2"}
+STATE_COLORS = {0: "#A9ADB2", 1: "#4C78A8", 2: "#E28E45"}
 
 mpl.rcParams.update(
     {
@@ -71,6 +71,23 @@ def load_and_validate() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         raise ValueError("Attribute identifiers differ between missingness and frozen mapping")
     if not np.allclose(states.groupby(["panel", "dimension"])["proportion"].sum(), 1.0):
         raise ValueError("State 0/1/2 proportions do not sum to one for every semantic group")
+    observed_labels = (
+        states[["state", "state_label"]]
+        .drop_duplicates()
+        .sort_values("state")
+        .set_index("state")["state_label"]
+        .to_dict()
+    )
+    expected_labels = {
+        0: "all_missing",
+        1: "no_abnormality",
+        2: "abnormality_present",
+    }
+    if observed_labels != expected_labels:
+        raise ValueError(
+            "Schema-expansion outputs do not use the manuscript state encoding: "
+            f"{observed_labels}"
+        )
 
     mapping = mapping.sort_values("ID").reset_index(drop=True)
     missing = missing.sort_values("attribute_id").reset_index(drop=True)
@@ -124,7 +141,7 @@ def draw_missingness(
     ax.tick_params(axis="x", length=0, pad=2)
     ax.tick_params(axis="y", length=0)
     ax.set_title("Attribute-level missingness across nested panels", pad=8)
-    ax.set_xlabel("Attribute ID (names and fixed assignments are listed in Supplementary Table S1)")
+    ax.set_xlabel("Attribute ID (names and fixed assignments are listed in S1 Table)")
     for boundary in [9.5, 19.5]:
         ax.axvline(boundary, color="white", linewidth=1.4)
     panel_label(ax, "a")
@@ -163,7 +180,7 @@ def draw_state_composition(ax: plt.Axes, states: pd.DataFrame, panel: str, label
                     ha="center",
                     va="center",
                     fontsize=5.2,
-                    color="white" if state in (0, 1) else "#333333",
+                    color="white" if state in (1, 2) else "#333333",
                 )
         left += values
 
