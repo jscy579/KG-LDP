@@ -32,6 +32,16 @@ RANDOM_PARTITIONS = 100
 BASE_SEED = 2026
 DOMAIN_SIZE = 3
 
+# Canonical manuscript encoding used by the formal KGR-LDP pipeline.
+ALL_MISSING_STATE = 0
+NO_ABNORMALITY_STATE = 1
+ABNORMALITY_PRESENT_STATE = 2
+STATE_LABELS = {
+    ALL_MISSING_STATE: "all_missing",
+    NO_ABNORMALITY_STATE: "no_abnormality",
+    ABNORMALITY_PRESENT_STATE: "abnormality_present",
+}
+
 sys.path.insert(0, str(PROJECT))
 from semmed_ldp.ldp_mechanisms import (  # noqa: E402
     grr_estimate,
@@ -152,9 +162,9 @@ def apply_rules(
             raise ValueError(
                 f"Rule coverage failure for {variable}: {int(bad_coverage.sum())} nonmissing records"
             )
-        encoded = np.full(len(merged), 2, dtype=np.int8)
-        encoded[nonmissing] = 1
-        encoded[nonmissing & normal] = 0
+        encoded = np.full(len(merged), ALL_MISSING_STATE, dtype=np.int8)
+        encoded[nonmissing] = ABNORMALITY_PRESENT_STATE
+        encoded[nonmissing & normal] = NO_ABNORMALITY_STATE
         states[variable] = encoded
         coverage_rows.append(
             {
@@ -165,10 +175,14 @@ def apply_rules(
                 "n_nonmissing": int(nonmissing.sum()),
                 "n_missing": int((~nonmissing).sum()),
                 "missing_rate": float((~nonmissing).mean()),
-                "n_normal": int((encoded == 0).sum()),
-                "n_abnormal": int((encoded == 1).sum()),
-                "normal_rate_among_nonmissing": float((encoded[nonmissing] == 0).mean()),
-                "abnormal_rate_among_nonmissing": float((encoded[nonmissing] == 1).mean()),
+                "n_normal": int((encoded == NO_ABNORMALITY_STATE).sum()),
+                "n_abnormal": int((encoded == ABNORMALITY_PRESENT_STATE).sum()),
+                "normal_rate_among_nonmissing": float(
+                    (encoded[nonmissing] == NO_ABNORMALITY_STATE).mean()
+                ),
+                "abnormal_rate_among_nonmissing": float(
+                    (encoded[nonmissing] == ABNORMALITY_PRESENT_STATE).mean()
+                ),
                 "rule_rows": int(len(applicable)),
             }
         )
@@ -181,9 +195,11 @@ def aggregate_groups(attribute_states: np.ndarray, labels: list[str]) -> tuple[n
     label_array = np.asarray(labels, dtype=object)
     for j, label in enumerate(label_order):
         local = attribute_states[:, label_array == label]
-        result[:, j] = 0
-        result[np.all(local == 2, axis=1), j] = 2
-        result[np.any(local == 1, axis=1), j] = 1
+        result[:, j] = NO_ABNORMALITY_STATE
+        result[np.all(local == ALL_MISSING_STATE, axis=1), j] = ALL_MISSING_STATE
+        result[np.any(local == ABNORMALITY_PRESENT_STATE, axis=1), j] = (
+            ABNORMALITY_PRESENT_STATE
+        )
     return result, label_order
 
 
@@ -252,7 +268,7 @@ def state_distribution_rows(
                     "dimension": name,
                     "group_size": int(group_sizes[j]),
                     "state": state,
-                    "state_label": ["no_abnormality", "abnormality_present", "all_missing"][state],
+                    "state_label": STATE_LABELS[state],
                     "proportion": float(truth[j, state]),
                 }
             )
@@ -531,7 +547,11 @@ def main() -> None:
         "repeat_runs": RUNS,
         "random_partitions": RANDOM_PARTITIONS,
         "base_seed": BASE_SEED,
-        "state_encoding": {"0": "no abnormality", "1": "abnormality present", "2": "all values missing"},
+        "state_encoding": {
+            "0": "all attributes in the semantic dimension are missing",
+            "1": "at least one attribute is observed and all observed attributes are within their prespecified reference intervals",
+            "2": "at least one observed attribute is outside its prespecified reference interval",
+        },
         "random_aggregation": "MSE averaged over 100 fixed size-matched partitions within each perturbation run",
         "runtime_protocol": "KGR-LDP; one warm-up plus ten timed repeats; vectorized NumPy implementation",
         "software": {

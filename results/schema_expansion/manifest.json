@@ -27,9 +27,9 @@
   "random_partitions": 100,
   "base_seed": 2026,
   "state_encoding": {
-    "0": "no abnormality",
-    "1": "abnormality present",
-    "2": "all values missing"
+    "0": "all attributes in the semantic dimension are missing",
+    "1": "at least one attribute is observed and all observed attributes are within their prespecified reference intervals",
+    "2": "at least one observed attribute is outside its prespecified reference interval"
   },
   "random_aggregation": "MSE averaged over 100 fixed size-matched partitions within each perturbation run",
   "runtime_protocol": "KGR-LDP; one warm-up plus ten timed repeats; vectorized NumPy implementation",
@@ -103,5 +103,17 @@
     "state_concentration.csv",
     "supplement_table_s1.csv",
     "supplement_table_s1_mapping.csv"
-  ]
+  ],
+  "state_encoding_migration": {
+    "type": "deterministic label permutation",
+    "mapping": {
+      "2": 0,
+      "0": 1,
+      "1": 2
+    },
+    "legacy_backup": "results/schema_expansion/state_concentration_legacy_encoding.csv",
+    "legacy_sha256": "4c856d682823bc8c4f508f940559d7f0d96a2408c6ff327b0ad4ab1bda3922d2",
+    "affected_output": "results/schema_expansion/state_concentration.csv",
+    "unchanged_outputs": "MSE and runtime outputs contain no state-indexed columns"
+  }
 }
